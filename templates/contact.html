@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}Contact us{% endblock title %}
+{% block body %}
+    <div class="container">
+        <h1 py-3 my-3 class="text-center">Contact Us</h1>
+        <form method="post">
+        {% csrf_token %}
+        <div class="mb-3"> 
+          <label for="exampleFormControlTextarea1" class="form-label">Enter your Name</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" name = 'name' ></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name = 'email'>
+          </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="phone" class="form-control" id="exampleFormControlInput1" placeholder="Enter yor phone number" name = 'phone'>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Enter your address</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" name = 'address'></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Enter you query or suggestion</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1" name = 'description'></textarea>
+          </div>
+          <div class="col-12">
+            <button class="btn btn-primary" type="submit">Submit form</button>
+          </div>
+        </form>
+    </div>
+
+{% endblock body %}
